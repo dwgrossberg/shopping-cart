@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.scss";
 import gitHubIcon from "../../assets/gitHubIconWhite.png";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className="Footer">
       <div className="made-by">
