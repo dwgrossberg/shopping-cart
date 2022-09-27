@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home";
+import Products from "./pages/products";
+import Contact from "./pages/contact";
 import "./styles/App.scss";
 
 const App = () => {
@@ -27,14 +29,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
-      <h1>Our First Test</h1>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 };
