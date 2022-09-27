@@ -1,0 +1,32 @@
+.Footer {
+  grid-area: 3 / 1 / 4 / 3;
+  height: 100%;
+}
+
+.made-by {
+  color: ghostwhite;
+  background-color: #202832;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  padding: 7px;
+  border-radius: 7px;
+  width: 100%;
+  a {
+    text-decoration: none;
+    color: ghostwhite;
+  }
+  img {
+    height: 16px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: rotate(360deg) scale(1.2);
+    }
+  }
+  #github-icon {
+    max-height: 16px;
+  }
+}

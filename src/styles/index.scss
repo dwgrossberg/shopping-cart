@@ -13,9 +13,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: auto;
-  overflow-x: auto;
-  min-width: 1200px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  min-width: 800px;
   min-height: 600px;
   color: #202832;
   background-color: ghostwhite;
