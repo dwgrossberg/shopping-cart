@@ -15,15 +15,28 @@ const ProductCard = (props) => {
       </div>
       <div className="product-title">{title}</div>
       <div className="rating">
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        ></link>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
+        <div>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          ></link>
+          <span
+            className={"fa fa-star " + (rating.rate > 0 ? "checked" : "")}
+          ></span>
+          <span
+            className={"fa fa-star " + (rating.rate > 1 ? "checked" : "")}
+          ></span>
+          <span
+            className={"fa fa-star " + (rating.rate > 2 ? "checked" : "")}
+          ></span>
+          <span
+            className={"fa fa-star " + (rating.rate > 3 ? "checked" : "")}
+          ></span>
+          <span
+            className={"fa fa-star " + (rating.rate > 4 ? "checked" : "")}
+          ></span>
+        </div>
+        <div className="rating-count">({rating.count})</div>
       </div>
       <div className="price-quant">
         <div className="price">${price}</div>
