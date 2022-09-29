@@ -13,8 +13,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 13px;
-  padding: 7px;
+  font-size: 10px;
+  padding: 3px;
   border-radius: 7px;
   width: 100%;
   a {
@@ -22,7 +22,7 @@
     color: ghostwhite;
   }
   img {
-    height: 16px;
+    height: 12px;
     transition: transform 0.3s ease-in-out;
     &:hover {
       transform: rotate(360deg) scale(1.2);

@@ -1,6 +1,14 @@
 .product-card {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
-    width: 150px;
-    // height: 150px;
+    width: 50%;
+    height: 40%;
+  }
+  .jewelery {
+    width: 40%;
+    height: 30%;
   }
 }

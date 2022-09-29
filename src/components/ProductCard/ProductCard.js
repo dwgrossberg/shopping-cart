@@ -5,7 +5,7 @@ const ProductCard = (props) => {
   console.log(props);
   return (
     <div className="product-card">
-      <img alt={title} src={image}></img>
+      <img alt={title} src={image} className={category}></img>
     </div>
   );
 };

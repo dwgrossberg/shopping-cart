@@ -1,4 +1,5 @@
 .products {
+  margin: 100px 0;
   display: grid;
   grid-template: repeat(auto-fit, minmax(200px, 1fr)) / repeat(
       auto-fit,

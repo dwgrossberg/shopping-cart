@@ -1,5 +1,10 @@
 .header {
+  position: fixed;
   display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
   justify-content: space-between;
   .header-nav ul {
     display: flex;
