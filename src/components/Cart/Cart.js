@@ -1,9 +1,12 @@
-const cart = () => {
+import cartIcon from "../../assets/cart.png";
+import "./Cart.scss";
+
+const Cart = () => {
   return (
-    <div className="cart">
-      <h2>cart</h2>
+    <div id="cart">
+      <img alt="cart" src={cartIcon}></img>
     </div>
   );
 };
 
-export default cart;
+export default Cart;

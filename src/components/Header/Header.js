@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import icon from "../../assets/icon.png";
+import Cart from "../Cart/Cart";
 import "./Header.scss";
 
 const Header = (props) => {
@@ -26,7 +27,7 @@ const Header = (props) => {
           </NavLink>
         </ul>
       </nav>
-      <div id="cart">cart</div>
+      <Cart />
     </div>
   );
 };

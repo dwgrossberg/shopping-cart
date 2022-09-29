@@ -1,0 +1,19 @@
+#cart {
+  background-color: #672a4e;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  &:hover {
+    background-color: #820b8a;
+    transition: all 0.2s ease-in;
+    transform: scale(1.05);
+  }
+}
