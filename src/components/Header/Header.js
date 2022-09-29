@@ -5,6 +5,7 @@ import Cart from "../Cart/Cart";
 import "./Header.scss";
 
 const Header = (props) => {
+  const { cart } = props;
   return (
     <div className="header">
       <nav className="header-nav">
@@ -27,7 +28,7 @@ const Header = (props) => {
           </NavLink>
         </ul>
       </nav>
-      <Cart />
+      <Cart cart={cart} />
     </div>
   );
 };

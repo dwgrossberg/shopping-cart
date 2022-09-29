@@ -9,9 +9,9 @@ import "./styles/App.scss";
 
 const App = () => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
 
-  // shuffle array to randomize product display each time
+  // shuffle array to randomize product display on each visit
   const shuffle = (array) => {
     let currentIndex = array.length;
     let randomIndex;
@@ -47,7 +47,7 @@ const App = () => {
         `https://fakestoreapi.com/carts/${randomNum}`
       );
       const cartData = await cartResponse.json();
-      setCart(cartData);
+      setCart(cartData.products);
       console.log(cartData);
       return cartData;
     } catch (err) {
@@ -63,7 +63,7 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header cart={cart} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products products={products} />} />
