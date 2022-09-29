@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import icon from "../../assets/icon.png";
 import "./Header.scss";
 
 const Header = (props) => {
@@ -7,22 +8,25 @@ const Header = (props) => {
     <div className="header">
       <nav className="header-nav">
         <ul>
+          <li>
+            <img alt="icon" src={icon} id="icon"></img>
+          </li>
           <NavLink
             to="/"
             className={"nav-link"}
             style={{ textDecoration: "none" }}
           >
-            <li>Home</li>
+            <li>home</li>
           </NavLink>
           <NavLink to="/products" className={"nav-link"}>
-            <li>Products</li>
+            <li>products</li>
           </NavLink>
           <NavLink to="/contact" className={"nav-link"}>
-            <li>Contact</li>
+            <li>contact</li>
           </NavLink>
         </ul>
       </nav>
-      <div id="cart">Cart</div>
+      <div id="cart">cart</div>
     </div>
   );
 };

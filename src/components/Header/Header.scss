@@ -4,15 +4,26 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 30px;
+  padding: 20px;
   justify-content: space-between;
+  background-color: #f6f3f6;
+  opacity: 0.9;
   .header-nav ul {
     display: flex;
     gap: 10px;
     list-style: none;
     .nav-link {
       text-decoration: none;
-      color: orange;
+      color: #820b8a;
     }
   }
+}
+
+#icon {
+  height: 20px;
+}
+
+#cart {
+  color: #672a4e;
+  cursor: pointer;
 }
