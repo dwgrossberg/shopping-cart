@@ -9,22 +9,40 @@ import "./styles/App.scss";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
 
   // fetch product data from fake store api
-  const fetchShopData = async () => {
+  const fetchProductData = async () => {
     try {
-      const shopResponse = await fetch("https://fakestoreapi.com/products");
-      const shopData = await shopResponse.json();
-      setProducts(shopData);
-      console.log(shopData);
-      return shopData;
+      const prodResponse = await fetch("https://fakestoreapi.com/products");
+      const prodData = await prodResponse.json();
+      setProducts(prodData);
+      console.log(prodData);
+      return prodData;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  // fetch cart data from fake store api
+  const fetchCartData = async () => {
+    const randomNum = Math.floor(Math.random() * 6 + 1);
+    try {
+      const cartResponse = await fetch(
+        `https://fakestoreapi.com/carts/${randomNum}`
+      );
+      const cartData = await cartResponse.json();
+      setCart(cartData);
+      console.log(cartData);
+      return cartData;
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    fetchShopData();
+    fetchProductData();
+    fetchCartData();
   }, []);
 
   return (
