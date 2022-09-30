@@ -5,9 +5,9 @@ const ProductCard = (props) => {
   const [quantity, setQuantity] = useState(1);
   const handleClick = (e) => {
     const quant = e.target.parentElement.childNodes[1].innerText;
-    if (Number(quant) === 0) {
+    if (Number(quant) === 1) {
       if (e.target.innerText === "+") setQuantity(quantity + 1);
-    } else if (quant > 0)
+    } else if (quant > 1)
       e.target.innerText === "-"
         ? setQuantity(quantity - 1)
         : setQuantity(quantity + 1);
@@ -15,8 +15,21 @@ const ProductCard = (props) => {
 
   const { cart, setCart } = props;
   const addToCart = (e) => {
-    const prodId = e.target.parentElement.id;
-    setCart([...cart, { productId: Number(prodId), quantity: quantity }]);
+    const prodId = Number(e.target.parentElement.id);
+    cart.forEach((item) => {
+      if (item.productId === prodId) {
+        const quant = cart.filter((item) => item.productId === prodId);
+        setCart([
+          ...cart.filter((item) => item.productId !== prodId),
+          {
+            productId: prodId,
+            quantity: quant[0].quantity + quantity,
+          },
+        ]);
+      } else {
+        setCart([...cart, { productId: prodId, quantity: quantity }]);
+      }
+    });
   };
 
   const { category, image, price, rating, title, id } = props.product;

@@ -3,7 +3,6 @@ import "./Cart.scss";
 
 const Cart = (props) => {
   const { cart } = props;
-  console.log(cart);
   return (
     <div id="cart">
       <img alt="cart" src={cartIcon}></img>
