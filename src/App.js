@@ -6,6 +6,7 @@ import Home from "./pages/home/home";
 import Products from "./pages/products/products";
 import Contact from "./pages/contact/contact";
 import "./styles/App.scss";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -47,6 +48,11 @@ const App = () => {
         `https://fakestoreapi.com/carts/${randomNum}`
       );
       const cartData = await cartResponse.json();
+
+      // cartData.forEach((item) => {
+      //   const p = products.filter((prod) => prod.id === item.productId);
+      // });
+
       setCart(cartData.products);
       console.log(cartData);
       return cartData;
@@ -64,9 +70,13 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Header cart={cart} />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products products={products} />} />
+          <Route
+            path="/products"
+            element={<Products products={products} cart={cart} />}
+          />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

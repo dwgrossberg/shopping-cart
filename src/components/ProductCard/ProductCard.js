@@ -2,11 +2,15 @@ import { useState } from "react";
 import "./ProductCard.scss";
 
 const ProductCard = (props) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const handleClick = (e) => {
-    console.log(e.target);
+    const quant = e.target.parentElement.childNodes[1].innerText;
+    setQuantity(quantity + 1);
+    console.log(quant);
   };
 
+  const { cart } = props;
+  console.log(cart);
   const { category, image, price, rating, title } = props.product;
   return (
     <div className="product-card">
@@ -44,7 +48,7 @@ const ProductCard = (props) => {
           <button className="decrement" onClick={handleClick}>
             -
           </button>
-          <div className="quant-number">1</div>
+          <div className="quant-number">{quantity}</div>
           <button className="increment" onClick={handleClick}>
             +
           </button>
