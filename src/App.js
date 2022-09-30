@@ -48,13 +48,8 @@ const App = () => {
         `https://fakestoreapi.com/carts/${randomNum}`
       );
       const cartData = await cartResponse.json();
-
-      // cartData.forEach((item) => {
-      //   const p = products.filter((prod) => prod.id === item.productId);
-      // });
-
       setCart(cartData.products);
-      console.log(cartData);
+      console.log(cartData.products);
       return cartData;
     } catch (err) {
       console.log(err);
@@ -75,7 +70,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route
             path="/products"
-            element={<Products products={products} cart={cart} />}
+            element={
+              <Products products={products} cart={cart} setCart={setCart} />
+            }
           />
           <Route path="/contact" element={<Contact />} />
         </Routes>

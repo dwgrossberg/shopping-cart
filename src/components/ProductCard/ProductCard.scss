@@ -81,6 +81,37 @@
   }
 }
 
+.stars {
+  position: relative;
+  float: left;
+  font-size: 50pt;
+  height: 1em;
+  line-height: 1em;
+}
+
+.stars:before {
+  content: "\2606\2606\2606\2606\2606";
+  float: left;
+  z-index: 1;
+}
+
+.stars .percent {
+  position: absolute;
+  left: 0;
+  float: left;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.stars .percent:after {
+  content: "\2605\2605\2605\2605\2605";
+  color: rgb(255, 200, 0);
+}
+
+li {
+  display: table;
+}
+
 .add-to-cart {
   width: 100%;
   font-size: 11px;
