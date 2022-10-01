@@ -3,10 +3,10 @@ import FilterBar from "../../components/FilterBar/FilterBar";
 import "./products.scss";
 
 const products = (props) => {
-  const { products, cart, setCart } = props;
+  const { products, setProducts, cart, setCart } = props;
   return (
     <div>
-      <FilterBar />
+      <FilterBar products={products} setProducts={setProducts} />
       <div className="products">
         {products.map((item) => {
           return (
