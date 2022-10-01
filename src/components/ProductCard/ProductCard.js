@@ -18,18 +18,21 @@ const ProductCard = (props) => {
     const prodId = Number(e.target.parentElement.id);
     cart.forEach((item) => {
       if (item.productId === prodId) {
-        const quant = cart.filter((item) => item.productId === prodId);
+        console.log(item);
+        const quant = cart.filter((item) => item.productId === prodId)[0]
+          .quantity;
         setCart([
           ...cart.filter((item) => item.productId !== prodId),
           {
             productId: prodId,
-            quantity: quant[0].quantity + quantity,
+            quantity: quant + quantity,
           },
         ]);
       } else {
         setCart([...cart, { productId: prodId, quantity: quantity }]);
       }
     });
+    console.log(cart);
   };
 
   const { category, image, price, rating, title, id } = props.product;
