@@ -15,6 +15,7 @@
     align-items: center;
     gap: 10px;
     #filter-category {
+      cursor: pointer;
       width: 70px;
       font-size: 9px;
       background-color: #af9ab2;
@@ -26,5 +27,9 @@
       color: white;
       font-weight: normal;
     }
+  }
+  #filter-price,
+  #filter-rating {
+    cursor: pointer;
   }
 }

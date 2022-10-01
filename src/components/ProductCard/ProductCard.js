@@ -16,22 +16,18 @@ const ProductCard = (props) => {
   const { cart, setCart } = props;
   const addToCart = (e) => {
     const prodId = Number(e.target.parentElement.id);
-    cart.forEach((item) => {
-      if (item.productId === prodId) {
-        console.log(item);
-        const quant = cart.filter((item) => item.productId === prodId)[0]
-          .quantity;
-        setCart([
-          ...cart.filter((item) => item.productId !== prodId),
-          {
-            productId: prodId,
-            quantity: quant + quantity,
-          },
-        ]);
-      } else {
-        setCart([...cart, { productId: prodId, quantity: quantity }]);
-      }
-    });
+    if (cart.find((item) => item.productId === prodId)) {
+      const quant = cart.find((item) => item.productId === prodId).quantity;
+      setCart([
+        ...cart.filter((item) => item.productId !== prodId),
+        {
+          productId: prodId,
+          quantity: quant + quantity,
+        },
+      ]);
+    } else {
+      setCart([...cart, { productId: prodId, quantity: quantity }]);
+    }
     console.log(cart);
   };
 

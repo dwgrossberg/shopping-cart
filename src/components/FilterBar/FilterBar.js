@@ -15,8 +15,12 @@ const FilterBar = (props) => {
           <option>men's clothing</option>
         </select>
       </div>
-      <div id="filter-price">price</div>
-      <div id="filter-rating">rating</div>
+      <div id="filter-price">
+        price <span id="price-span">▲</span>
+      </div>
+      <div id="filter-rating">
+        rating <span id="rating-span">▲</span>
+      </div>
     </div>
   );
 };
