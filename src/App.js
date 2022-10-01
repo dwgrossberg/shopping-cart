@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/home";
-import Products from "./pages/products/products";
+import Products from "./pages/Products/Products";
 import Contact from "./pages/contact/contact";
 import "./styles/App.scss";
 import ScrollToTop from "./components/ScrollToTop";

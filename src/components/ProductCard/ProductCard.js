@@ -13,6 +13,12 @@ const ProductCard = (props) => {
         : setQuantity(quantity + 1);
   };
 
+  const addZeroes = (num) => {
+    const dec = String(num).split(".")[1];
+    const len = dec && dec.length > 2 ? dec.length : 2;
+    return Number(num).toFixed(len);
+  };
+
   const { cart, setCart } = props;
   const addToCart = (e) => {
     const prodId = Number(e.target.parentElement.id);
@@ -63,7 +69,7 @@ const ProductCard = (props) => {
         <div className="rating-count">({rating.count})</div>
       </div>
       <div className="price-quant">
-        <div className="price">${price}</div>
+        <div className="price">${addZeroes(price)}</div>
         <div className="quant">
           <button className="decrement" onClick={handleClick}>
             -

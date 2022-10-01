@@ -29,11 +29,11 @@
     }
   }
   #filter-price,
-  #filter-rating {
+  #filter-rating,
+  #clear {
     cursor: pointer;
+    &:hover {
+      color: #672a4e;
+    }
   }
-}
-
-.rotate {
-  transform: rotate(90deg);
 }

@@ -1,8 +1,10 @@
+import { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard.js";
 import FilterBar from "../../components/FilterBar/FilterBar";
-import "./products.scss";
+import "./Products.scss";
 
-const products = (props) => {
+const Products = (props) => {
+  const { category, setCategory } = useState([]);
   const { products, setProducts, cart, setCart } = props;
   return (
     <div>
@@ -23,4 +25,4 @@ const products = (props) => {
   );
 };
 
-export default products;
+export default Products;

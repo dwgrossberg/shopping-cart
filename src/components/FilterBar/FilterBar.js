@@ -5,7 +5,17 @@ const FilterBar = (props) => {
 
   const handleClick = (e) => {
     if (e.target.nodeName === "SPAN" || e.target.nodeName === "DIV") {
-      if (e.target.id === "price-span" || e.target.id === "filter-price") {
+      if (e.target.id === "clear") {
+        document.getElementById("filter-rating").style.color = "";
+        document.getElementById("filter-price").style.color = "";
+        document.getElementById("price-span").textContent = "▲";
+        document.getElementById("rating-span").textContent = "▲";
+      } else if (
+        e.target.id === "price-span" ||
+        e.target.id === "filter-price"
+      ) {
+        document.getElementById("filter-price").style.color = "#820B8A";
+        document.getElementById("filter-rating").style.color = "";
         if (document.getElementById("price-span").textContent === "▼") {
           document.getElementById("price-span").textContent = "▲";
           const productsCopy = [...products];
@@ -21,6 +31,8 @@ const FilterBar = (props) => {
         e.target.id === "rating-span" ||
         e.target.id === "filter-rating"
       ) {
+        document.getElementById("filter-rating").style.color = "#820B8A";
+        document.getElementById("filter-price").style.color = "";
         if (document.getElementById("rating-span").textContent === "▼") {
           document.getElementById("rating-span").textContent = "▲";
           const productsCopy = [...products];
@@ -33,7 +45,6 @@ const FilterBar = (props) => {
           setProducts(productsCopy);
         }
       }
-      console.log(e.target.id);
     } else if (e.target.nodeName === "OPTION") {
       console.log(e.target.id);
     }
@@ -58,6 +69,9 @@ const FilterBar = (props) => {
       </div>
       <div id="filter-rating" onClick={handleClick}>
         rating <span id="rating-span">▲</span>
+      </div>
+      <div id="clear" onClick={handleClick}>
+        clear
       </div>
     </div>
   );
