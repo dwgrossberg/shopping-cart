@@ -7,6 +7,7 @@ import Products from "./pages/products/products";
 import Contact from "./pages/contact/contact";
 import "./styles/App.scss";
 import ScrollToTop from "./components/ScrollToTop";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -85,6 +86,7 @@ const App = () => {
               />
             }
           />
+          <Route path="products/:id" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

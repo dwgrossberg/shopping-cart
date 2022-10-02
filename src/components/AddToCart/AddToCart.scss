@@ -1,0 +1,51 @@
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-quant {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  gap: 10px;
+  .quant-number {
+    width: 10px;
+    text-align: center;
+    font-size: 9px;
+  }
+  .quant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    button {
+      width: 18px;
+      height: 18px;
+      border-radius: 7px;
+      background-color: white;
+      border: 0.5px solid #af9ab2;
+      cursor: pointer;
+      &:hover {
+        background-color: #672a4e;
+        color: white;
+      }
+    }
+  }
+}
+
+.add-to-cart {
+  width: 100%;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  background-color: #c7ede4;
+  &:hover {
+    background-color: #d5fff3;
+  }
+}

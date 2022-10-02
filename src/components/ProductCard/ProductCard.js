@@ -1,42 +1,8 @@
-import { useState } from "react";
+import AddToCart from "../AddToCart/AddToCart";
 import "./ProductCard.scss";
 
 const ProductCard = (props) => {
-  const [quantity, setQuantity] = useState(1);
-  const handleClick = (e) => {
-    const quant = e.target.parentElement.childNodes[1].innerText;
-    if (Number(quant) === 1) {
-      if (e.target.innerText === "+") setQuantity(quantity + 1);
-    } else if (quant > 1)
-      e.target.innerText === "-"
-        ? setQuantity(quantity - 1)
-        : setQuantity(quantity + 1);
-  };
-
-  const addZeroes = (num) => {
-    const dec = String(num).split(".")[1];
-    const len = dec && dec.length > 2 ? dec.length : 2;
-    return Number(num).toFixed(len);
-  };
-
   const { cart, setCart } = props;
-  const addToCart = (e) => {
-    const prodId = Number(e.target.parentElement.id);
-    if (cart.find((item) => item.productId === prodId)) {
-      const quant = cart.find((item) => item.productId === prodId).quantity;
-      setCart([
-        ...cart.filter((item) => item.productId !== prodId),
-        {
-          productId: prodId,
-          quantity: quant + quantity,
-        },
-      ]);
-    } else {
-      setCart([...cart, { productId: prodId, quantity: quantity }]);
-    }
-    console.log(cart);
-  };
-
   const { category, image, price, rating, title, id } = props.product;
   return (
     <div className="product-card" id={id}>
@@ -68,21 +34,7 @@ const ProductCard = (props) => {
         </div>
         <div className="rating-count">({rating.count})</div>
       </div>
-      <div className="price-quant">
-        <div className="price">${addZeroes(price)}</div>
-        <div className="quant">
-          <button className="decrement" onClick={handleClick}>
-            -
-          </button>
-          <div className="quant-number">{quantity}</div>
-          <button className="increment" onClick={handleClick}>
-            +
-          </button>
-        </div>
-      </div>
-      <button className="add-to-cart" onClick={addToCart}>
-        Add to Cart
-      </button>
+      <AddToCart price={price} cart={cart} setCart={setCart} />
     </div>
   );
 };
