@@ -21,7 +21,9 @@ const AddToCart = (props) => {
 
   const { cart, setCart, price } = props;
   const addToCart = (e) => {
-    const prodId = Number(e.target.parentElement.id);
+    const prodId = Number(e.target.parentElement.parentElement.id);
+    console.log(prodId);
+
     if (cart.find((item) => item.productId === prodId)) {
       const quant = cart.find((item) => item.productId === prodId).quantity;
       setCart([

@@ -86,7 +86,10 @@ const App = () => {
               />
             }
           />
-          <Route path="products/:id" element={<ProductDetails />} />
+          <Route
+            path="/products/:id"
+            element={<ProductDetails products={products} />}
+          />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
