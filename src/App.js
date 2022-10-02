@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/home";
-import Products from "./pages/Products/Products";
+import Products from "./pages/products/products";
 import Contact from "./pages/contact/contact";
 import "./styles/App.scss";
 import ScrollToTop from "./components/ScrollToTop";
@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [category, setCategory] = useState([]);
 
   // shuffle array to randomize product display on each visit
   const shuffle = (array) => {
@@ -32,7 +33,9 @@ const App = () => {
     try {
       const prodResponse = await fetch("https://fakestoreapi.com/products");
       const prodData = await prodResponse.json();
-      setProducts(shuffle(prodData));
+      const shuffledData = shuffle(prodData);
+      setProducts(shuffledData);
+      setCategory(shuffledData);
       console.log(prodData);
       return prodData;
     } catch (err) {
@@ -74,8 +77,11 @@ const App = () => {
               <Products
                 products={products}
                 setProducts={setProducts}
+                category={category}
+                setCategory={setCategory}
                 cart={cart}
                 setCart={setCart}
+                shuffle={shuffle}
               />
             }
           />

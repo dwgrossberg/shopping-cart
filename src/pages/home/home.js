@@ -1,6 +1,6 @@
-import "./Home.scss";
+import "./home.scss";
 
-const Home = () => {
+const home = () => {
   return (
     <div className="home">
       <h2>anything you want store</h2>
@@ -8,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default home;

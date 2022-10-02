@@ -1,6 +1,6 @@
-import "./Contact.scss";
+import "./contact.scss";
 
-const Contact = () => {
+const contact = () => {
   return (
     <div className="contact">
       <h2>contact</h2>
@@ -8,4 +8,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default contact;

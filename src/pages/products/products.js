@@ -1,16 +1,29 @@
-import { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard.js";
 import FilterBar from "../../components/FilterBar/FilterBar";
-import "./Products.scss";
+import "./products.scss";
 
-const Products = (props) => {
-  const { category, setCategory } = useState([]);
-  const { products, setProducts, cart, setCart } = props;
+const products = (props) => {
+  const {
+    products,
+    setProducts,
+    category,
+    setCategory,
+    cart,
+    setCart,
+    shuffle,
+  } = props;
+
   return (
     <div>
-      <FilterBar products={products} setProducts={setProducts} />
+      <FilterBar
+        products={products}
+        setProducts={setProducts}
+        category={category}
+        setCategory={setCategory}
+        shuffle={shuffle}
+      />
       <div className="products">
-        {products.map((item) => {
+        {category.map((item) => {
           return (
             <ProductCard
               key={item.id}
@@ -25,4 +38,4 @@ const Products = (props) => {
   );
 };
 
-export default Products;
+export default products;

@@ -1,7 +1,7 @@
 import "./FilterBar.scss";
 
 const FilterBar = (props) => {
-  const { products, setProducts } = props;
+  const { products, setProducts, category, setCategory, shuffle } = props;
 
   const handleClick = (e) => {
     if (e.target.nodeName === "SPAN" || e.target.nodeName === "DIV") {
@@ -10,6 +10,9 @@ const FilterBar = (props) => {
         document.getElementById("filter-price").style.color = "";
         document.getElementById("price-span").textContent = "▲";
         document.getElementById("rating-span").textContent = "▲";
+        document.getElementById("filter-category").value = "all";
+        const productsCopy = [...products];
+        setCategory(productsCopy);
       } else if (
         e.target.id === "price-span" ||
         e.target.id === "filter-price"
@@ -18,14 +21,14 @@ const FilterBar = (props) => {
         document.getElementById("filter-rating").style.color = "";
         if (document.getElementById("price-span").textContent === "▼") {
           document.getElementById("price-span").textContent = "▲";
-          const productsCopy = [...products];
-          productsCopy.sort((a, b) => b.price - a.price);
-          setProducts(productsCopy);
+          const categoryCopy = [...category];
+          categoryCopy.sort((a, b) => b.price - a.price);
+          setCategory(categoryCopy);
         } else {
           document.getElementById("price-span").textContent = "▼";
-          const productsCopy = [...products];
-          productsCopy.sort((a, b) => a.price - b.price);
-          setProducts(productsCopy);
+          const categoryCopy = [...category];
+          categoryCopy.sort((a, b) => a.price - b.price);
+          setCategory(categoryCopy);
         }
       } else if (
         e.target.id === "rating-span" ||
@@ -35,18 +38,49 @@ const FilterBar = (props) => {
         document.getElementById("filter-price").style.color = "";
         if (document.getElementById("rating-span").textContent === "▼") {
           document.getElementById("rating-span").textContent = "▲";
-          const productsCopy = [...products];
-          productsCopy.sort((a, b) => b.rating.rate - a.rating.rate);
-          setProducts(productsCopy);
+          const categoryCopy = [...category];
+          categoryCopy.sort((a, b) => b.rating.rate - a.rating.rate);
+          setCategory(categoryCopy);
         } else {
           document.getElementById("rating-span").textContent = "▼";
-          const productsCopy = [...products];
-          productsCopy.sort((a, b) => a.rating.rate - b.rating.rate);
-          setProducts(productsCopy);
+          const categoryCopy = [...category];
+          categoryCopy.sort((a, b) => a.rating.rate - b.rating.rate);
+          setCategory(categoryCopy);
         }
       }
     } else if (e.target.nodeName === "OPTION") {
-      console.log(e.target.id);
+      const productsCopy = [...products];
+      document.getElementById("filter-rating").style.color = "";
+      document.getElementById("filter-price").style.color = "";
+      document.getElementById("price-span").textContent = "▲";
+      document.getElementById("rating-span").textContent = "▲";
+      switch (e.target.id) {
+        case "all":
+          setCategory(productsCopy);
+          break;
+        case "jewelry":
+          setCategory(
+            productsCopy.filter((item) => item.category === "jewelery")
+          );
+          break;
+        case "electronics":
+          setCategory(
+            productsCopy.filter((item) => item.category === "electronics")
+          );
+          break;
+        case "women's-clothing":
+          setCategory(
+            productsCopy.filter((item) => item.category === "women's clothing")
+          );
+          break;
+        case "men's-clothing":
+          setCategory(
+            productsCopy.filter((item) => item.category === "men's clothing")
+          );
+          break;
+        default:
+          console.log(e.target.id);
+      }
     }
   };
 
@@ -58,7 +92,8 @@ const FilterBar = (props) => {
           category:
         </label>
         <select id="filter-category" onClick={handleClick}>
-          <option id="jewelery">jewelery</option>
+          <option id="all">all</option>
+          <option id="jewelry">jewelry</option>
           <option id="electronics">electronics</option>
           <option id="women's-clothing">women's clothing</option>
           <option id="men's-clothing">men's clothing</option>
