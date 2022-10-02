@@ -13,7 +13,10 @@ const ProductDetails = (props) => {
         <img alt="product-details" src={thisProduct.image}></img>
         <Rating rating={thisProduct.rating} />
       </div>
-      <div className="right"></div>
+      <div className="right">
+        <div className="details-title">{thisProduct.title}</div>
+        <div className="details-description">{thisProduct.description}</div>
+      </div>
     </div>
   );
 };

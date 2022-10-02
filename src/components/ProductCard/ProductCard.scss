@@ -42,21 +42,3 @@
     width: 30%;
   }
 }
-
-.rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  .fa {
-    color: #ede8ed;
-  }
-  .checked {
-    color: #820b8a;
-  }
-  .rating-count {
-    font-size: 8px;
-    color: grey;
-    text-decoration: none;
-  }
-}

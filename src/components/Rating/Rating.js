@@ -1,3 +1,5 @@
+import "./Rating.scss";
+
 const Rating = (props) => {
   return (
     <div className="rating">
