@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
+import AddToCart from "../AddToCart/AddToCart";
 import Rating from "../Rating/Rating";
 import "./ProductDetails.scss";
 
 const ProductDetails = (props) => {
-  const { products } = props;
+  const { products, cart, setCart } = props;
   const params = useParams();
   const thisProduct = products.find((item) => item.id === Number(params.id));
-  console.log(thisProduct);
   return (
     <div className="product-details">
       <div className="left">
@@ -16,6 +16,7 @@ const ProductDetails = (props) => {
       <div className="right">
         <div className="details-title">{thisProduct.title}</div>
         <div className="details-description">{thisProduct.description}</div>
+        <AddToCart price={thisProduct.price} cart={cart} setCart={setCart} />
       </div>
     </div>
   );

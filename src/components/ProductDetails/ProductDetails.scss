@@ -1,8 +1,14 @@
 .product-details {
   margin-top: 100px;
+  border: 0.5px solid #af9ab2;
+  box-shadow: 0.5px 0.5px #820b8a;
+  height: 350px;
+  padding: 10px;
+  border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
   .left,
   .right {
     display: flex;
@@ -13,10 +19,18 @@
   }
   .right {
     align-items: flex-start;
-    width: 500px;
+    width: 450px;
     margin-right: 50px;
   }
   img {
     width: 30%;
+    margin-bottom: 30px;
+  }
+  .details-title {
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .details-description {
+    font-size: 11px;
   }
 }
