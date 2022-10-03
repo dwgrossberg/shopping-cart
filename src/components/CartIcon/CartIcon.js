@@ -1,5 +1,5 @@
 import cartIcon from "../../assets/cart.png";
-import "./Cart.scss";
+import "./CartIcon.scss";
 
 const Cart = (props) => {
   const { cart } = props;

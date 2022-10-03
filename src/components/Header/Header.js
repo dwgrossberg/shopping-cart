@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import icon from "../../assets/icon.png";
-import Cart from "../Cart/Cart";
+import CartIcon from "../CartIcon/CartIcon";
 import "./Header.scss";
 
 const Header = (props) => {
@@ -20,15 +20,25 @@ const Header = (props) => {
           >
             <li>home</li>
           </NavLink>
-          <NavLink to="/products" className={"nav-link"}>
+          <NavLink
+            to="/products"
+            className={"nav-link"}
+            style={{ textDecoration: "none" }}
+          >
             <li>products</li>
           </NavLink>
-          <NavLink to="/contact" className={"nav-link"}>
+          <NavLink
+            to="/contact"
+            className={"nav-link"}
+            style={{ textDecoration: "none" }}
+          >
             <li>contact</li>
           </NavLink>
         </ul>
       </nav>
-      <Cart cart={cart} />
+      <NavLink to="/cart">
+        <CartIcon cart={cart} />
+      </NavLink>
     </div>
   );
 };

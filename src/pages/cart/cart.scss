@@ -1,0 +1,31 @@
+.cart {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .title-quantity {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .cart-items {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    border: 0.5px solid #af9ab2;
+    box-shadow: 0.5px 0.5px #820b8a;
+  }
+  .cart-title {
+    width: 170px;
+    font-size: 11px;
+    text-align: center;
+  }
+  img {
+    width: 10%;
+  }
+}

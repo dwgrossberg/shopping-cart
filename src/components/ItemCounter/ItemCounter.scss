@@ -1,24 +1,3 @@
-.button-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.add-to-cart {
-  width: 100%;
-  font-size: 11px;
-  padding: 5px 10px;
-  border-radius: 7px;
-  border: none;
-  cursor: pointer;
-  background-color: #c7ede4;
-  &:hover {
-    background-color: #d5fff3;
-  }
-}
-
 .price-quant {
   display: flex;
   align-items: center;

@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/home";
 import Products from "./pages/products/products";
 import Contact from "./pages/contact/contact";
+import Cart from "./pages/cart/cart";
 import "./styles/App.scss";
 import ScrollToTop from "./components/ScrollToTop";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
@@ -97,6 +98,10 @@ const App = () => {
             }
           />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/cart"
+            element={<Cart products={products} cart={cart} setCart={setCart} />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
