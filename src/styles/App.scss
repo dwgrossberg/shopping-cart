@@ -5,7 +5,39 @@
   gap: 20px;
   display: grid;
   align-items: stretch;
+  justify-items: center;
   grid-template: 1fr 50px / 1fr;
   padding: 30px;
   background-color: ghostwhite;
+}
+
+.price-quant {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  gap: 20px;
+  .quant-number {
+    width: 10px;
+    text-align: center;
+    font-size: 9px;
+  }
+  .quant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    button {
+      width: 18px;
+      height: 18px;
+      border-radius: 7px;
+      background-color: white;
+      border: 0.5px solid #af9ab2;
+      cursor: pointer;
+      &:hover {
+        background-color: #672a4e;
+        color: white;
+      }
+    }
+  }
 }

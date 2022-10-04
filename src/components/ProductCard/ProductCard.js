@@ -4,7 +4,7 @@ import Rating from "../Rating/Rating";
 import "./ProductCard.scss";
 
 const ProductCard = (props) => {
-  const { cart, setCart } = props;
+  const { cart, setCart, product } = props;
   const { category, image, price, rating, title, id } = props.product;
   return (
     <div className="product-card" id={id}>
@@ -17,7 +17,12 @@ const ProductCard = (props) => {
           <Rating rating={rating} />
         </Link>
       </div>
-      <AddToCart price={price} cart={cart} setCart={setCart} />
+      <AddToCart
+        price={price}
+        cart={cart}
+        setCart={setCart}
+        product={product}
+      />
     </div>
   );
 };

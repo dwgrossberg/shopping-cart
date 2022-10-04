@@ -1,5 +1,5 @@
 import AddToCart from "../../components/AddToCart/AddToCart";
-import ItemCounter from "../../components/ItemCounter/ItemCounter";
+import CartCounter from "../../components/CartCounter/CartCounter";
 import "./cart.scss";
 
 const cart = (props) => {
@@ -19,21 +19,12 @@ const cart = (props) => {
                 {products.find((prod) => prod.id === item.productId).title}
               </div>
               <div className="cart-quantity">
-                <ItemCounter
+                <CartCounter
                   quantity={item.quantity}
-                  setCart={setCart}
                   price={
                     products.find((prod) => prod.id === item.productId).price
                   }
                 />
-                {/* <AddToCart
-                  cart={cart}
-                  setCart={setCart}
-                  price={
-                    products.find((prod) => prod.id === item.productId).price
-                  }
-                /> */}
-                {item.quantity}
               </div>
             </div>
           </div>

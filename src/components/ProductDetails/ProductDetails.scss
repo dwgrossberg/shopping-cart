@@ -2,13 +2,14 @@
   margin-top: 100px;
   border: 0.5px solid #af9ab2;
   box-shadow: 0.5px 0.5px #820b8a;
-  height: 400px;
   padding: 10px;
   border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+  min-height: 400px;
+  max-width: 600px;
   .left,
   .right {
     display: flex;
@@ -20,7 +21,7 @@
   .right {
     align-items: flex-start;
     // width: 500px;
-    min-width: 200px;
+    // min-width: 200px;
     margin-right: 50px;
   }
   .left {

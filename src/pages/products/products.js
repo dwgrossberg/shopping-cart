@@ -3,15 +3,7 @@ import FilterBar from "../../components/FilterBar/FilterBar";
 import "./products.scss";
 
 const products = (props) => {
-  const {
-    products,
-    setProducts,
-    category,
-    setCategory,
-    cart,
-    setCart,
-    shuffle,
-  } = props;
+  const { products, setProducts, category, setCategory, cart, setCart } = props;
 
   return (
     <div>
@@ -20,7 +12,6 @@ const products = (props) => {
         setProducts={setProducts}
         category={category}
         setCategory={setCategory}
-        shuffle={shuffle}
       />
       <div className="products">
         {category.map((item) => {

@@ -5,15 +5,16 @@
   gap: 10px;
   .title-quantity {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    // flex-direction: column;
+    gap: 50px;
     align-items: center;
+    justify-content: center;
   }
   .cart-items {
     display: flex;
-    gap: 10px;
-    padding: 10px;
-    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    justify-content: space-around;
     align-items: center;
     background-color: white;
     border-radius: 7px;
@@ -24,6 +25,11 @@
     width: 170px;
     font-size: 11px;
     text-align: center;
+  }
+  .cart-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   img {
     width: 10%;

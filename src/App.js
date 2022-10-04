@@ -30,11 +30,18 @@ const App = () => {
     return array;
   };
 
+  const addZeroes = (num) => {
+    const dec = String(num).split(".")[1];
+    const len = dec && dec.length > 2 ? dec.length : 2;
+    return Number(num).toFixed(len);
+  };
+
   // fetch product data from fake store api
   const fetchProductData = async () => {
     try {
       const prodResponse = await fetch("https://fakestoreapi.com/products");
       const prodData = await prodResponse.json();
+      prodData.forEach((item) => (item.price = addZeroes(item.price)));
       const shuffledData = shuffle(prodData);
       setProducts(shuffledData);
       setCategory(shuffledData);
@@ -83,7 +90,6 @@ const App = () => {
                 setCategory={setCategory}
                 cart={cart}
                 setCart={setCart}
-                shuffle={shuffle}
               />
             }
           />

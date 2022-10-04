@@ -1,7 +1,7 @@
 import "./FilterBar.scss";
 
 const FilterBar = (props) => {
-  const { products, setProducts, category, setCategory, shuffle } = props;
+  const { products, category, setCategory } = props;
 
   const handleClick = (e) => {
     if (e.target.nodeName === "SPAN" || e.target.nodeName === "DIV") {
