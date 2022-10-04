@@ -1,9 +1,16 @@
 import CartCounter from "../../components/CartCounter";
 import CartTotal from "../../components/CartTotal/CartTotal";
+import deleteIcon from "../../assets/delete.png";
 import "./cart.scss";
 
 const cart = (props) => {
   const { products, cart, setCart } = props;
+  const handleClick = (e) => {
+    const parts = e.target.id.split("-");
+    const id = Number(parts.pop());
+    setCart(cart.filter((item) => item.productId !== id));
+    console.log(cart, id);
+  };
 
   return (
     <div className="cart">
@@ -26,6 +33,13 @@ const cart = (props) => {
                   }
                 />
               </div>
+              <img
+                onClick={handleClick}
+                className="remove-item"
+                id={"remove-item-" + item.productId}
+                alt="remove-item"
+                src={deleteIcon}
+              ></img>
             </div>
           </div>
         );

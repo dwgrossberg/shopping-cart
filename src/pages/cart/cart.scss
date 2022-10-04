@@ -22,6 +22,20 @@
     border: 0.5px solid #af9ab2;
     box-shadow: 0.5px 0.5px #820b8a;
   }
+  .cart-total {
+    background-color: #672a4e;
+    color: white;
+    box-shadow: 0.5px 0.5px #820b8a;
+    margin-top: 10px;
+  }
+  .remove-item {
+    width: 15px;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
   .cart-title {
     width: 170px;
     font-size: 11px;

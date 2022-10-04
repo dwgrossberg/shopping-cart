@@ -8,7 +8,6 @@ const CartTotal = (props) => {
       const price =
         value.quantity *
         products.find((item) => item.id === value.productId).price;
-      console.log(price, accumulator, value);
       return accumulator + price;
     }, 0);
   };
@@ -17,6 +16,11 @@ const CartTotal = (props) => {
     const len = dec && dec.length > 2 ? dec.length : 2;
     return Number(num).toFixed(len);
   };
+  const addItems = () => {
+    return cart.reduce((accumulator, value) => {
+      return accumulator + value.quantity;
+    }, 0);
+  };
 
   return (
     <div className="cart-total">
@@ -24,7 +28,8 @@ const CartTotal = (props) => {
         <div>your shopping cart:</div>
       </div>
       <div className="cart-buttons"></div>
-      <div className="price-total">{addZeroes(calculateTotal())}</div>
+      <div className="items-total">{addItems()}</div>
+      <div className="price-total">${addZeroes(calculateTotal())}</div>
     </div>
   );
 };
