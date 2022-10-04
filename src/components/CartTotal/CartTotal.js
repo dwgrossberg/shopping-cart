@@ -12,9 +12,7 @@ const CartTotal = (props) => {
     }, 0);
   };
   const addZeroes = (num) => {
-    const dec = String(num).split(".")[1];
-    const len = dec && dec.length > 2 ? dec.length : 2;
-    return Number(num).toFixed(len);
+    return Number(num).toFixed(2);
   };
   const addItems = () => {
     return cart.reduce((accumulator, value) => {
@@ -27,7 +25,11 @@ const CartTotal = (props) => {
       <div className="your-cart">
         <div>your shopping cart:</div>
       </div>
-      <div className="cart-buttons"></div>
+      <div className="cart-buttons">
+        <button className="checkout">
+          <a href="https://www.theodinproject.com/">checkout</a>
+        </button>
+      </div>
       <div className="items-total">{addItems()}</div>
       <div className="price-total">${addZeroes(calculateTotal())}</div>
     </div>

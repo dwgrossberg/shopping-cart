@@ -9,14 +9,17 @@ const cart = (props) => {
     const parts = e.target.id.split("-");
     const id = Number(parts.pop());
     setCart(cart.filter((item) => item.productId !== id));
-    console.log(cart, id);
   };
 
   return (
     <div className="cart">
       {cart.map((item) => {
         return (
-          <div key={item.productId} className={"cart-items"}>
+          <div
+            key={item.productId}
+            className={"cart-items"}
+            id={"cart-item-" + item.productId}
+          >
             <img
               alt="cart-product"
               src={products.find((prod) => prod.id === item.productId).image}
@@ -31,6 +34,8 @@ const cart = (props) => {
                   price={
                     products.find((prod) => prod.id === item.productId).price
                   }
+                  cart={cart}
+                  setCart={setCart}
                 />
               </div>
               <img

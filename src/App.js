@@ -31,9 +31,7 @@ const App = () => {
   };
 
   const addZeroes = (num) => {
-    const dec = String(num).split(".")[1];
-    const len = dec && dec.length > 2 ? dec.length : 2;
-    return Number(num).toFixed(len);
+    return Number(num).toFixed(2);
   };
 
   // fetch product data from fake store api

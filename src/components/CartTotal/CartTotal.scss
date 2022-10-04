@@ -13,8 +13,10 @@
 
 .cart-buttons {
   width: 170px;
-  background-color: cadetblue;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .items-total {
   width: 10%;
@@ -33,4 +35,23 @@
   font-size: 13px;
   font-weight: bold;
   padding-right: 17%;
+}
+
+.checkout {
+  background-color: white;
+  border: none;
+  outline: 1px white solid;
+  padding: 10px 50px;
+  border-radius: 7px;
+  cursor: pointer;
+  a {
+    font-size: 13px;
+    color: #672a4e;
+    text-decoration: none;
+  }
+  &:hover {
+    transition: all 1s;
+    background-color: #d5fff3;
+    outline: 2px solid #820b8a;
+  }
 }
