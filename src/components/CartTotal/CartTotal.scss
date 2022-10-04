@@ -1,0 +1,24 @@
+.your-cart {
+  width: 25%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 11px;
+  font-weight: bold;
+  div {
+    // width: 20px;
+  }
+}
+
+.cart-buttons {
+  width: 170px;
+  background-color: cadetblue;
+  height: 50px;
+}
+
+.price-total {
+  width: 30%;
+  background-color: aqua;
+  height: 50px;
+}

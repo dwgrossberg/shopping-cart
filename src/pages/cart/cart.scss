@@ -10,7 +10,8 @@
     align-items: center;
     justify-content: center;
   }
-  .cart-items {
+  .cart-items,
+  .cart-total {
     display: flex;
     gap: 20px;
     padding: 10px 20px;

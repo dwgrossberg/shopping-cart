@@ -1,5 +1,5 @@
-import AddToCart from "../../components/AddToCart/AddToCart";
-import CartCounter from "../../components/CartCounter/CartCounter";
+import CartCounter from "../../components/CartCounter";
+import CartTotal from "../../components/CartTotal/CartTotal";
 import "./cart.scss";
 
 const cart = (props) => {
@@ -30,6 +30,7 @@ const cart = (props) => {
           </div>
         );
       })}
+      <CartTotal products={products} cart={cart} />
     </div>
   );
 };
