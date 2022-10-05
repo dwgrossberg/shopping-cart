@@ -57,7 +57,7 @@ exports[`App component snapshot test 1`] = `
           id="cart"
         >
           <img
-            alt="cart"
+            alt="shopping-cart"
             src="cart.png"
           />
         </div>

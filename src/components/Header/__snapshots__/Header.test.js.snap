@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component snapshot test 1`] = `
+<div
+  className="header"
+>
+  <nav
+    className="header-nav"
+  >
+    <ul>
+      <li>
+        <img
+          alt="icon"
+          id="icon"
+          src="icon.png"
+        />
+      </li>
+      <NavLink
+        className="nav-link"
+        style={
+          Object {
+            "textDecoration": "none",
+          }
+        }
+        to="/"
+      >
+        <li>
+          home
+        </li>
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        onClick={[Function]}
+        style={
+          Object {
+            "textDecoration": "none",
+          }
+        }
+        to="/products"
+      >
+        <li>
+          products
+        </li>
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        style={
+          Object {
+            "textDecoration": "none",
+          }
+        }
+        to="/contact"
+      >
+        <li>
+          contact
+        </li>
+      </NavLink>
+    </ul>
+  </nav>
+  <NavLink
+    to="/cart"
+  >
+    <Cart />
+  </NavLink>
+</div>
+`;

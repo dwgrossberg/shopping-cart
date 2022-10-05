@@ -86,7 +86,7 @@ const FilterBar = (props) => {
 
   return (
     <div id={"filter-bar"}>
-      <div className="filter">Filter shop items by: </div>
+      <div className="filter">filter shop items by: </div>
       <div className="category-wrapper">
         <label htmlFor="filter-category" name="category">
           category:

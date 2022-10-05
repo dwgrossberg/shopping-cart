@@ -5,7 +5,7 @@ const Cart = (props) => {
   const { cart } = props;
   return (
     <div id="cart">
-      <img alt="cart" src={cartIcon}></img>
+      <img alt="shopping-cart" src={cartIcon}></img>
       {cart.length > 0 && <div id="cart-count">{cart.length}</div>}
     </div>
   );
