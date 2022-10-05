@@ -25,7 +25,7 @@
   .cart-total {
     background-color: #672a4e;
     color: white;
-    box-shadow: 0.5px 0.5px #820b8a;
+    box-shadow: 1px 1px #d5fff3;
     margin-top: 10px;
   }
   .remove-item {
@@ -35,7 +35,6 @@
       transform: scale(1.05);
     }
   }
-
   .cart-title {
     width: 170px;
     font-size: 11px;
@@ -47,6 +46,6 @@
     align-items: center;
   }
   img {
-    width: 10%;
+    width: 5%;
   }
 }

@@ -5,7 +5,10 @@ import CartIcon from "../CartIcon/CartIcon";
 import "./Header.scss";
 
 const Header = (props) => {
-  const { cart } = props;
+  const { cart, products, setCategory } = props;
+  const handleClick = () => {
+    setCategory([...products]);
+  };
   return (
     <div className="header">
       <nav className="header-nav">
@@ -24,6 +27,7 @@ const Header = (props) => {
             to="/products"
             className={"nav-link"}
             style={{ textDecoration: "none" }}
+            onClick={handleClick}
           >
             <li>products</li>
           </NavLink>

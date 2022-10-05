@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component snapshot test 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="header"
+    >
+      <nav
+        class="header-nav"
+      >
+        <ul>
+          <li>
+            <img
+              alt="icon"
+              id="icon"
+              src="icon.png"
+            />
+          </li>
+          <a
+            aria-current="page"
+            class="nav-link active"
+            href="/"
+            style="text-decoration: none;"
+          >
+            <li>
+              home
+            </li>
+          </a>
+          <a
+            class="nav-link"
+            href="/products"
+            style="text-decoration: none;"
+          >
+            <li>
+              products
+            </li>
+          </a>
+          <a
+            class="nav-link"
+            href="/contact"
+            style="text-decoration: none;"
+          >
+            <li>
+              contact
+            </li>
+          </a>
+        </ul>
+      </nav>
+      <a
+        class=""
+        href="/cart"
+      >
+        <div
+          id="cart"
+        >
+          <img
+            alt="cart"
+            src="cart.png"
+          />
+        </div>
+      </a>
+    </div>
+    <div
+      class="home"
+    >
+      <h2>
+        anything you want store
+      </h2>
+    </div>
+    <div
+      class="footer"
+    >
+      <div
+        class="made-by"
+      >
+        <p>
+          Made by
+        </p>
+        <a
+          href="https://github.com/dwgrossberg"
+        >
+          <img
+            alt="github-icon"
+            id="github-icon"
+            src="github.png"
+          />
+        </a>
+        <p>
+          Dan Grossberg
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

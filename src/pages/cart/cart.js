@@ -1,4 +1,4 @@
-import CartCounter from "../../components/CartCounter";
+import CartCounter from "../../components/CartCounter/CartCounter";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import deleteIcon from "../../assets/delete.png";
 import "./cart.scss";

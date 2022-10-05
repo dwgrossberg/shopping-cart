@@ -74,7 +74,7 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header cart={cart} />
+        <Header cart={cart} products={products} setCategory={setCategory} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
