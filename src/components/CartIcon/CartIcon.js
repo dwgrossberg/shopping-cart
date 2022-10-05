@@ -1,7 +1,7 @@
 import cartIcon from "../../assets/cart.png";
 import "./CartIcon.scss";
 
-const Cart = (props) => {
+const CartIcon = (props) => {
   const { cart } = props;
   return (
     <div id="cart">
@@ -11,4 +11,4 @@ const Cart = (props) => {
   );
 };
 
-export default Cart;
+export default CartIcon;

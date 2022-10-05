@@ -10,6 +10,7 @@ import ProductDetails from "../ProductDetails/ProductDetails";
 
 describe("Product Card component", () => {
   afterEach(cleanup);
+  // sample product
   const product = {
     category: "men's clothing",
     description:
@@ -47,6 +48,9 @@ describe("Product Card component", () => {
         </Routes>
       </MemoryRouter>
     );
+    expect(
+      screen.queryByText(/The color could be slightly different/i)
+    ).not.toBeInTheDocument();
     const user = userEvent.setup();
     await user.click(screen.getByAltText("product-item"));
     expect(

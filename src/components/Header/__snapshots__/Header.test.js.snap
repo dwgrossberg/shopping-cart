@@ -60,7 +60,7 @@ exports[`Header component snapshot test 1`] = `
   <NavLink
     to="/cart"
   >
-    <Cart />
+    <CartIcon />
   </NavLink>
 </div>
 `;
