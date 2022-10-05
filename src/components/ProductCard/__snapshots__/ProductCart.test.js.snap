@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Card component snapshot test 1`] = `
+<div
+  className="product-card"
+  id={4}
+>
+  <div
+    className="card-wrapper"
+  >
+    <Link
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/products/4"
+    >
+      <div
+        className="img-wrapper"
+      >
+        <img
+          alt="product-item"
+          className="men's clothing"
+          src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+        />
+      </div>
+      <div
+        className="product-title"
+      >
+        Mens Casual Slim Fit
+      </div>
+      <Rating
+        rating={
+          Object {
+            "count": 430,
+            "rate": 2.1,
+          }
+        }
+      />
+    </Link>
+  </div>
+  <AddToCart
+    price="15.99"
+    product={
+      Object {
+        "category": "men's clothing",
+        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+        "id": 4,
+        "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+        "price": "15.99",
+        "rating": Object {
+          "count": 430,
+          "rate": 2.1,
+        },
+        "title": "Mens Casual Slim Fit",
+      }
+    }
+  />
+</div>
+`;

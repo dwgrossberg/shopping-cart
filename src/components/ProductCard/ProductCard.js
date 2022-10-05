@@ -11,7 +11,7 @@ const ProductCard = (props) => {
       <div className="card-wrapper">
         <Link to={"/products/" + id} style={{ textDecoration: "none" }}>
           <div className="img-wrapper">
-            <img alt={title} src={image} className={category}></img>
+            <img alt="product-item" src={image} className={category}></img>
           </div>
           <div className="product-title">{title}</div>
           <Rating rating={rating} />
