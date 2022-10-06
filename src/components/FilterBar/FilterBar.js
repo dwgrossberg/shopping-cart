@@ -91,12 +91,26 @@ const FilterBar = (props) => {
         <label htmlFor="filter-category" name="category">
           category:
         </label>
-        <select id="filter-category" onClick={handleClick}>
-          <option id="all">all</option>
-          <option id="jewelry">jewelry</option>
-          <option id="electronics">electronics</option>
-          <option id="women's-clothing">women's clothing</option>
-          <option id="men's-clothing">men's clothing</option>
+        <select
+          id="filter-category"
+          data-testid="filter-options"
+          onClick={handleClick}
+        >
+          <option id="all" data-testid="all">
+            all
+          </option>
+          <option id="jewelry" data-testid="jewelry">
+            jewelry
+          </option>
+          <option id="electronics" data-testid="electronics">
+            electronics
+          </option>
+          <option id="women's-clothing" data-testid="women's-clothing">
+            women's clothing
+          </option>
+          <option id="men's-clothing" data-testid="men's-clothing">
+            men's clothing
+          </option>
         </select>
       </div>
       <div id="filter-price" onClick={handleClick}>

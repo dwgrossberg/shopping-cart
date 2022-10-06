@@ -3,13 +3,13 @@ import ShallowRenderer from "react-test-renderer/shallow";
 import { screen, render, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import ProductCard from "./ProductCard";
-import App from "../../App";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
+import ProductCard from "./ProductCard";
 import ProductDetails from "../ProductDetails/ProductDetails";
 
 describe("Product Card component", () => {
   afterEach(cleanup);
+
   // sample product
   const product = {
     category: "men's clothing",
@@ -21,11 +21,6 @@ describe("Product Card component", () => {
     rating: { rate: 2.1, count: 430 },
     title: "Mens Casual Slim Fit",
   };
-
-  Object.defineProperty(window, "scrollTo", {
-    value: () => {},
-    writable: true,
-  });
 
   it("snapshot test", () => {
     const renderer = new ShallowRenderer();

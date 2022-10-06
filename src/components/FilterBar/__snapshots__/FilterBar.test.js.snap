@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Bar Component snapshot test 1`] = `
+<div
+  id="filter-bar"
+>
+  <div
+    className="filter"
+  >
+    filter shop items by: 
+  </div>
+  <div
+    className="category-wrapper"
+  >
+    <label
+      htmlFor="filter-category"
+      name="category"
+    >
+      category:
+    </label>
+    <select
+      data-testid="filter-options"
+      id="filter-category"
+      onClick={[Function]}
+    >
+      <option
+        data-testid="all"
+        id="all"
+      >
+        all
+      </option>
+      <option
+        data-testid="jewelry"
+        id="jewelry"
+      >
+        jewelry
+      </option>
+      <option
+        data-testid="electronics"
+        id="electronics"
+      >
+        electronics
+      </option>
+      <option
+        data-testid="women's-clothing"
+        id="women's-clothing"
+      >
+        women's clothing
+      </option>
+      <option
+        data-testid="men's-clothing"
+        id="men's-clothing"
+      >
+        men's clothing
+      </option>
+    </select>
+  </div>
+  <div
+    id="filter-price"
+    onClick={[Function]}
+  >
+    price 
+    <span
+      id="price-span"
+    >
+      ▲
+    </span>
+  </div>
+  <div
+    id="filter-rating"
+    onClick={[Function]}
+  >
+    rating 
+    <span
+      id="rating-span"
+    >
+      ▲
+    </span>
+  </div>
+  <div
+    id="clear"
+    onClick={[Function]}
+  >
+    clear
+  </div>
+</div>
+`;
