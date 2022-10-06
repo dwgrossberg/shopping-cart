@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ReactDOM } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -77,7 +78,7 @@ const App = () => {
         <Header cart={cart} products={products} setCategory={setCategory} />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home products={products} />} />
           <Route
             path="/products"
             element={
