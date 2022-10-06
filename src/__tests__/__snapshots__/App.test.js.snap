@@ -66,9 +66,16 @@ exports[`App component snapshot test 1`] = `
     <div
       class="home"
     >
-      <h2>
-        anything you want store
-      </h2>
+      <div
+        class="title"
+      >
+        <h2>
+          the anything you want store
+        </h2>
+        <p>
+          voted the #1 online retailer of 2023
+        </p>
+      </div>
     </div>
     <div
       class="footer"
