@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add to Cart component snapshot test 1`] = `
+<div
+  className="button-container"
+>
+  <div
+    className="price-quant"
+  >
+    <div
+      className="price"
+    >
+      $
+    </div>
+    <div
+      className="quant"
+    >
+      <button
+        className="decrement"
+        onClick={[Function]}
+      >
+        -
+      </button>
+      <div
+        className="quant-number"
+        data-testid="quant"
+      >
+        1
+      </div>
+      <button
+        className="increment"
+        onClick={[Function]}
+      >
+        +
+      </button>
+    </div>
+  </div>
+  <button
+    className="add-to-cart"
+    onClick={[Function]}
+  >
+    Add to Cart
+  </button>
+</div>
+`;

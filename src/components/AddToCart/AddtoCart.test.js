@@ -1,18 +1,22 @@
 import React from "react";
 import ShallowRenderer from "react-test-renderer/shallow";
-import { screen, render, cleanup, getByTestId } from "@testing-library/react";
+import { screen, render, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import Products from "../../pages/products/products";
-import FilterBar from "./FilterBar";
+import AddToCart from "./AddToCart";
 
-describe("Filter Bar Component", () => {
+describe("Add to Cart component", () => {
   afterEach(cleanup);
   const renderer = new ShallowRenderer();
   const user = userEvent.setup();
 
-  // sample products from each category
+  const cart = [
+    { productId: 1, quantity: 2 },
+    { productId: 9, quantity: 1 },
+  ];
+
   const products = [
     {
       category: "women's clothing",
@@ -59,90 +63,39 @@ describe("Filter Bar Component", () => {
   ];
 
   it("snapshot test", () => {
-    renderer.render(<FilterBar category={products} />);
+    renderer.render(<AddToCart cart={cart} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
-  it("correctly displays the filter bar options", async () => {
-    render(
-      <MemoryRouter initialEntries={["/products"]}>
-        <Routes>
-          <Route
-            path={"/products"}
-            element={<Products products={products} category={products} />}
-          ></Route>
-        </Routes>
-      </MemoryRouter>
-    );
-    // check that filter bar is rendering correctly
-    expect(screen.getByText(/filter shop items by/i)).toBeInTheDocument();
-    // check that all products are rendered correctly
-    expect(screen.getAllByText(/Add to Cart/i)).toHaveLength(4);
-    // test filter bar drop down menu buttons
-    await user.selectOptions(screen.getByTestId("filter-options"), ["jewelry"]);
-    expect(screen.getByTestId("filter-options")).toHaveTextContent("jewelry");
-    await user.selectOptions(screen.getByTestId("filter-options"), [
-      "electronics",
-    ]);
-    expect(screen.getByTestId("filter-options")).toHaveTextContent(
-      "electronics"
-    );
-  });
-
-  it("calls the onClick handler correctly for each change of category", async () => {
-    // mock the select inout and onClick function
+  it("correctly calls item increment counter", async () => {
     const onClick = jest.fn();
     render(
-      <select
-        id="filter-category"
-        data-testid="filter-options"
-        onClick={onClick}
-      >
-        <option id="all" data-testid="all">
-          all
-        </option>
-        <option id="jewelry" data-testid="jewelry">
-          jewelry
-        </option>
-        <option id="electronics" data-testid="electronics">
-          electronics
-        </option>
-        <option id="women's-clothing" data-testid="women's-clothing">
-          women's clothing
-        </option>
-        <option id="men's-clothing" data-testid="men's-clothing">
-          men's clothing
-        </option>
-      </select>
-    );
-    await user.click(screen.getByTestId("filter-options"));
-    expect(onClick).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByTestId("filter-options"), ["jewelry"]);
-    expect(onClick).toHaveBeenCalledTimes(2);
-    await user.click(screen.getByTestId("filter-options"), ["electronics"]);
-    expect(onClick).toHaveBeenCalledTimes(3);
-  });
-
-  it("calls onClick handler correctly when filtering by price and rating", async () => {
-    const onClick = jest.fn();
-    render(
-      <div>
-        <div id="filter-price" onClick={onClick}>
-          price <span id="price-span">▲</span>
+      <div className="quant">
+        <button className="decrement" onClick={onClick}>
+          -
+        </button>
+        <div className="quant-number" data-testid="quant">
+          {1}
         </div>
-        <div id="filter-rating" onClick={onClick}>
-          rating <span id="rating-span">▲</span>
-        </div>
-        <div id="clear" onClick={onClick}>
-          clear
-        </div>
+        <button className="increment" onClick={onClick}>
+          +
+        </button>
       </div>
     );
-    await user.click(screen.getByText(/price/i));
+    await user.click(screen.getByText(/-/i));
     expect(onClick).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByText(/rating/i));
+    await user.click(screen.getByText(/\+/i));
     expect(onClick).toHaveBeenCalledTimes(2);
-    await user.click(screen.getByText(/clear/i));
-    expect(onClick).toHaveBeenCalledTimes(3);
+  });
+
+  it("correctly calls add to cart function", async () => {
+    const onClick = jest.fn();
+    render(
+      <button className="add-to-cart" onClick={onClick}>
+        Add to Cart
+      </button>
+    );
+    await user.click(screen.getByText(/Add to Cart/i));
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

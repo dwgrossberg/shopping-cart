@@ -39,7 +39,9 @@ const AddToCart = (props) => {
           <button className="decrement" onClick={handleClick}>
             -
           </button>
-          <div className="quant-number">{quantity}</div>
+          <div className="quant-number" data-testid="quant">
+            {quantity}
+          </div>
           <button className="increment" onClick={handleClick}>
             +
           </button>

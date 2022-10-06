@@ -17,12 +17,7 @@ const ProductCard = (props) => {
           <Rating rating={rating} />
         </Link>
       </div>
-      <AddToCart
-        price={price}
-        cart={cart}
-        setCart={setCart}
-        product={product}
-      />
+      <AddToCart price={price} cart={cart} setCart={setCart} />
     </div>
   );
 };
