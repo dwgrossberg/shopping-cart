@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import Products from "../../pages/products/products";
-import FilterBar from "./FilterBar";
+import FilterBar from "../FilterBar/FilterBar";
 
 describe("Filter Bar Component", () => {
   afterEach(cleanup);

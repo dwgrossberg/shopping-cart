@@ -4,7 +4,7 @@ import { screen, render, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import ProductDetails from "../ProductDetails/ProductDetails";
 
 describe("Product Card component", () => {

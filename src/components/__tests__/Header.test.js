@@ -3,7 +3,7 @@ import ShallowRenderer from "react-test-renderer/shallow";
 import { screen, render, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import Header from "./Header";
+import Header from "../Header/Header";
 import App from "../../App";
 
 describe("Header component", () => {
