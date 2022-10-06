@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Counter component snapshot test 1`] = `
+<div
+  className="price-quant"
+>
+  <div
+    className="quant"
+  >
+    <button
+      className="decrement"
+      onClick={[Function]}
+    >
+      -
+    </button>
+    <div
+      className="quant-number"
+    />
+    <button
+      className="increment"
+      onClick={[Function]}
+    >
+      +
+    </button>
+  </div>
+  <div
+    className="price"
+  >
+    $
+  </div>
+</div>
+`;

@@ -9,6 +9,7 @@ import ProductDetails from "../ProductDetails/ProductDetails";
 
 describe("Product Card component", () => {
   afterEach(cleanup);
+  const user = userEvent.setup();
 
   // sample product
   const product = {
@@ -46,7 +47,6 @@ describe("Product Card component", () => {
     expect(
       screen.queryByText(/The color could be slightly different/i)
     ).not.toBeInTheDocument();
-    const user = userEvent.setup();
     await user.click(screen.getByAltText("product-item"));
     expect(
       screen.getByText(/The color could be slightly different/i)
