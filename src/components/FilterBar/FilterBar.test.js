@@ -10,6 +10,7 @@ import FilterBar from "./FilterBar";
 describe("Filter Bar Component", () => {
   afterEach(cleanup);
   const renderer = new ShallowRenderer();
+  const user = userEvent.setup();
 
   // sample products from each category
   const products = [
@@ -62,7 +63,7 @@ describe("Filter Bar Component", () => {
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
-  it("correctly filters by category", async () => {
+  it("correctly displays the filter bar options", async () => {
     render(
       <MemoryRouter initialEntries={["/products"]}>
         <Routes>
@@ -77,16 +78,47 @@ describe("Filter Bar Component", () => {
     expect(screen.getByText(/filter shop items by/i)).toBeInTheDocument();
     // check that all products are rendered correctly
     expect(screen.getAllByText(/Add to Cart/i)).toHaveLength(4);
-    // test filter bar
-    const user = userEvent.setup();
-    // await user.click(screen.getByDisplayValue(/all/i));
+    // test filter bar drop down menu buttons
     await user.selectOptions(screen.getByTestId("filter-options"), ["jewelry"]);
-    expect(screen.getByTestId("jewelry").selected).toBe(true);
-    // mock the onClick function
-    const clicker = jest.fn();
-    FilterBar.handleClick = clicker;
-
-    await user.click(screen.getByDisplayValue(/jewelry/i));
-    expect(clicker).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId("filter-options")).toHaveTextContent("jewelry");
+    await user.selectOptions(screen.getByTestId("filter-options"), [
+      "electronics",
+    ]);
+    expect(screen.getByTestId("filter-options")).toHaveTextContent(
+      "electronics"
+    );
+  });
+  it("calls the onClick handler correctly for each change of category", async () => {
+    // mock the select inout and onClick function
+    const onClick = jest.fn();
+    render(
+      <select
+        id="filter-category"
+        data-testid="filter-options"
+        onClick={onClick}
+      >
+        <option id="all" data-testid="all">
+          all
+        </option>
+        <option id="jewelry" data-testid="jewelry">
+          jewelry
+        </option>
+        <option id="electronics" data-testid="electronics">
+          electronics
+        </option>
+        <option id="women's-clothing" data-testid="women's-clothing">
+          women's clothing
+        </option>
+        <option id="men's-clothing" data-testid="men's-clothing">
+          men's clothing
+        </option>
+      </select>
+    );
+    await user.click(screen.getByTestId("filter-options"));
+    expect(onClick).toHaveBeenCalledTimes(1);
+    await user.click(screen.getByTestId("filter-options"), ["jewelry"]);
+    expect(onClick).toHaveBeenCalledTimes(2);
+    await user.click(screen.getByTestId("filter-options"), ["electronics"]);
+    expect(onClick).toHaveBeenCalledTimes(3);
   });
 });
