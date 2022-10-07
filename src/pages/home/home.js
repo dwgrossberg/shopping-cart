@@ -1,5 +1,6 @@
 import "./home.scss";
 import Carousel from "better-react-carousel";
+import { Link } from "react-router-dom";
 
 const home = (props) => {
   const { products } = props;
@@ -14,7 +15,7 @@ const home = (props) => {
         <Carousel loop hideArrow={true} autoplay={3000}>
           {products.map((item) => {
             return (
-              <Carousel.Item className="carousel-item">
+              <Carousel.Item className="carousel-item" key={item.id}>
                 <img
                   className="carousel-img"
                   alt={item.title}
@@ -26,6 +27,13 @@ const home = (props) => {
           })}
         </Carousel>
       </div>
+      <Link
+        to="/products"
+        className={"shop-now"}
+        style={{ textDecoration: "none" }}
+      >
+        <div>shop now!</div>
+      </Link>
     </div>
   );
 };

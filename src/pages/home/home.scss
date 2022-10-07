@@ -1,5 +1,5 @@
 .home {
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 14px;
   // position: relative;
 }
@@ -24,31 +24,6 @@
   font-size: 10px;
 }
 
-.custom-shape-divider-bottom-1665083497 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1665083497 svg {
-  position: relative;
-  display: block;
-  width: calc(128% + 1.3px);
-  height: 198px;
-}
-
-.custom-shape-divider-bottom-1665083357 {
-  height: 100%;
-}
-
-.custom-shape-divider-bottom-1665083497 .shape-fill {
-  fill: #c7ede4;
-}
-
 .carousel {
   height: 150px;
   width: 150px;
@@ -57,7 +32,29 @@
 
 .Carousel__Container-sc-hyhecw-0 {
   background-color: white;
+  padding: 10px;
   border: 0.5px solid #820b8a;
   box-shadow: 1px 1px #c7ede4;
   border-radius: 7px;
+}
+
+.shop-now {
+  z-index: 10;
+  margin-top: 70px;
+  margin-bottom: -70px;
+  background-color: #820b8a;
+  border: 3px transparent solid;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 7px;
+  font-size: 13px;
+  box-shadow: 1px 1px white;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: #820b8a;
+    transition: all 0.2s ease-in;
+    transform: scale(1.05);
+    border: 3px double #820b8a;
+  }
 }
