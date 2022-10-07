@@ -42,19 +42,6 @@ exports[`Header component snapshot test 1`] = `
           products
         </li>
       </NavLink>
-      <NavLink
-        className="nav-link"
-        style={
-          Object {
-            "textDecoration": "none",
-          }
-        }
-        to="/contact"
-      >
-        <li>
-          contact
-        </li>
-      </NavLink>
     </ul>
   </nav>
   <NavLink

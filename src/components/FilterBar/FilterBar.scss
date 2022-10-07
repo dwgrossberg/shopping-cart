@@ -15,8 +15,8 @@
     align-items: center;
     gap: 10px;
     #filter-category {
+      font-family: "Montserrat";
       cursor: pointer;
-      //   width: 70px;
       font-size: 9px;
       background-color: #af9ab2;
       border: 0.5px solid white;
@@ -35,5 +35,25 @@
     &:hover {
       color: #672a4e;
     }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #filter-bar {
+    font-size: 8px;
+  }
+  #filter-category {
+    width: 70px;
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #filter-bar {
+    font-size: 7px;
+  }
+  #filter-category {
+    width: 50px;
+    font-size: 7px;
   }
 }

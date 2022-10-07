@@ -1,6 +1,6 @@
 .home {
   margin-top: 80px;
-  font-size: 14px;
+  font-size: 16px;
   // position: relative;
 }
 .home,
@@ -36,6 +36,8 @@
   border: 0.5px solid #820b8a;
   box-shadow: 1px 1px #c7ede4;
   border-radius: 7px;
+  height: 210px;
+  width: 150px;
 }
 
 .shop-now {
@@ -56,5 +58,18 @@
     transition: all 0.2s ease-in;
     transform: scale(1.05);
     border: 3px double #820b8a;
+    box-shadow: 1px 1px #820b8a;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home {
+    font-size: 11px;
   }
 }

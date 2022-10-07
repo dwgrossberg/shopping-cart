@@ -31,13 +31,6 @@ const Header = (props) => {
           >
             <li>products</li>
           </NavLink>
-          <NavLink
-            to="/contact"
-            className={"nav-link"}
-            style={{ textDecoration: "none" }}
-          >
-            <li>contact</li>
-          </NavLink>
         </ul>
       </nav>
       <NavLink to="/cart">

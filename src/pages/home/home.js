@@ -12,7 +12,12 @@ const home = (props) => {
         <p>voted the #1 online retailer of 2023</p>
       </div>
       <div className="carousel">
-        <Carousel loop hideArrow={true} autoplay={3000}>
+        <Carousel
+          loop={true}
+          hideArrow={true}
+          autoplay={3000}
+          breakpoint={1400}
+        >
           {products.map((item) => {
             return (
               <Carousel.Item className="carousel-item" key={item.id}>

@@ -24,7 +24,6 @@ describe("Header component", () => {
     render(<App />);
     expect(screen.getByText(/home/i)).toBeInTheDocument();
     expect(screen.getByText(/products/i)).toBeInTheDocument();
-    expect(screen.getByText(/contact/i)).toBeInTheDocument();
     expect(screen.getByAltText(/shopping-cart/i)).toBeInTheDocument();
   });
 
@@ -34,8 +33,6 @@ describe("Header component", () => {
     expect(screen.getByText(/anything you want store/i)).toBeInTheDocument();
     await user.click(screen.getByText(/products/i));
     expect(screen.getByText(/filter shop items by/i)).toBeInTheDocument();
-    await user.click(screen.getByText(/contact/i));
-    expect(screen.getByRole("heading").textContent).toMatch(/contact/i);
     await user.click(screen.getByAltText(/shopping-cart/i));
     expect(screen.getByText(/your shopping cart/i)).toBeInTheDocument();
   });
