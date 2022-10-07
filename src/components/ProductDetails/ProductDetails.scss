@@ -38,6 +38,9 @@
   .details-description {
     font-size: 11px;
   }
+  .left {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -45,6 +48,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
     .details-title,
     .details-description {
       text-align: center;
@@ -53,7 +57,10 @@
     .right {
       align-items: center;
       justify-content: center;
-      // width: 200px;
+      margin-right: 0px;
+    }
+    img {
+      width: 25%;
     }
   }
 }
@@ -61,5 +68,8 @@
 @media screen and (max-width: 380px) {
   .product-details {
     max-width: 250px;
+    img {
+      width: 20%;
+    }
   }
 }
