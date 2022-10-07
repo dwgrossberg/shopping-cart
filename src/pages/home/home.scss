@@ -17,6 +17,7 @@
 .title {
   margin-bottom: 20px;
   z-index: 10;
+  color: white;
 }
 
 .title p {
@@ -60,6 +61,26 @@
     border: 3px double #820b8a;
     box-shadow: 1px 1px #820b8a;
   }
+}
+
+.custom-shape-divider-top-1665186631 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1665186631 svg {
+  position: relative;
+  display: block;
+  width: calc(176% + 1.3px);
+  height: 449px;
+}
+
+.custom-shape-divider-top-1665186631 .shape-fill {
+  fill: #820b8a;
 }
 
 @media screen and (max-width: 600px) {
