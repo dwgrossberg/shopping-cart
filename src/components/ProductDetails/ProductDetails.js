@@ -8,7 +8,7 @@ const ProductDetails = (props) => {
   const params = useParams();
   const thisProduct = products.find((item) => item.id === Number(params.id));
   return (
-    <div className="product-details">
+    <div className="product-details" id={thisProduct.id}>
       <div className="left">
         <img alt="product-details" src={thisProduct.image}></img>
         <Rating rating={thisProduct.rating} />

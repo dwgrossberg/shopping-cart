@@ -44,12 +44,17 @@ const home = (props) => {
           {products.map((item) => {
             return (
               <Carousel.Item className="carousel-item" key={item.id}>
-                <img
-                  className="carousel-img"
-                  alt={item.title}
-                  width="100%"
-                  src={item.image}
-                />
+                <Link
+                  to={"/products/" + item.id}
+                  style={{ textDecoration: "none" }}
+                >
+                  <img
+                    className="carousel-img"
+                    alt={item.title}
+                    width="100%"
+                    src={item.image}
+                  />
+                </Link>
               </Carousel.Item>
             );
           })}

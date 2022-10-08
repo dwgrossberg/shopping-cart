@@ -15,7 +15,13 @@ const AddToCart = (props) => {
   };
 
   const addToCart = (e) => {
-    const prodId = Number(e.target.parentElement.parentElement.id);
+    let prodId;
+    if (e.target.parentElement.parentElement.parentElement.id) {
+      prodId = Number(e.target.parentElement.parentElement.parentElement.id);
+    } else {
+      prodId = Number(e.target.parentElement.parentElement.id);
+    }
+    console.log(prodId);
     if (cart.find((item) => item.productId === prodId)) {
       const quant = cart.find((item) => item.productId === prodId).quantity;
       setCart([
