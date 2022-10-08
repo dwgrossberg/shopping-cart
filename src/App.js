@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/home";
@@ -95,7 +95,7 @@ const App = () => {
           ></path>
         </svg>
       </div>
-      <BrowserRouter>
+      <HashRouter>
         <Header cart={cart} products={products} setCategory={setCategory} />
         <ScrollToTop />
         <Routes>
@@ -129,7 +129,7 @@ const App = () => {
           />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
