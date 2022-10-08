@@ -30,8 +30,14 @@ const CartTotal = (props) => {
           <a href="https://www.theodinproject.com/">checkout</a>
         </button>
       </div>
-      <div className="items-total">{addItems()}</div>
-      <div className="price-total">${addZeroes(calculateTotal())}</div>
+      <div className="cart-info">
+        <div className="items-total"># of items</div>
+        <div className="items-total">{addItems()}</div>
+      </div>
+      <div className="cart-info">
+        <div className="price-total">total price</div>
+        <div className="price-total">${addZeroes(calculateTotal())}</div>
+      </div>
     </div>
   );
 };

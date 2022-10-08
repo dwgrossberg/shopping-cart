@@ -40,6 +40,15 @@
   padding-right: 17%;
   text-decoration: underline;
 }
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 55px;
+  div {
+    width: 90px;
+  }
+}
 .checkout {
   background-color: white;
   border: none;

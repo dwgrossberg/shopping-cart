@@ -27,7 +27,6 @@
     box-shadow: 1px 1px #d5fff3;
     margin-top: 10px;
   }
-
   .cart-title {
     width: 170px;
     font-size: 11px;
@@ -39,8 +38,9 @@
     align-items: center;
   }
   img {
-    width: 7%;
-    min-width: 3%;
+    width: 50%;
+    max-width: 100px;
+    min-width: 11px;
   }
   .remove-item {
     width: 13px;
@@ -72,10 +72,13 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   .your-cart {
     font-size: 9px;
   }
+}
+
+@media screen and (max-width: 625px) {
   .checkout {
     padding: 7px 15px;
   }
@@ -87,6 +90,11 @@
   }
   .price-total {
     font-size: 11px;
+  }
+  .cart-info,
+  .items-total,
+  .price-total {
+    width: 70px;
   }
 }
 
@@ -108,6 +116,17 @@
     .cart-items,
     .cart-total {
       justify-content: center;
+    }
+    .cart-info,
+    .items-total,
+    .price-total {
+      width: 20px;
+    }
+    .items-total {
+      font-size: 7px;
+    }
+    .price-total {
+      font-size: 9px;
     }
   }
 }

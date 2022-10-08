@@ -2,6 +2,7 @@ import CartCounter from "../../components/CartCounter/CartCounter";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import deleteIcon from "../../assets/delete.png";
 import "./cart.scss";
+import { Link } from "react-router-dom";
 
 const cart = (props) => {
   const { products, cart, setCart } = props;
@@ -20,10 +21,16 @@ const cart = (props) => {
             className={"cart-items"}
             id={"cart-item-" + item.productId}
           >
-            <img
-              alt="cart-product"
-              src={products.find((prod) => prod.id === item.productId).image}
-            ></img>
+            <Link
+              to={"/products/" + item.productId}
+              style={{ textDecoration: "none" }}
+              className="cart-link"
+            >
+              <img
+                alt="cart-product"
+                src={products.find((prod) => prod.id === item.productId).image}
+              ></img>
+            </Link>
             <div className="title-quantity">
               <div className="cart-title">
                 {products.find((prod) => prod.id === item.productId).title}
