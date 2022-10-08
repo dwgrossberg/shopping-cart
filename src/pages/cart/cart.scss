@@ -20,6 +20,7 @@
     border-radius: 7px;
     border: 0.5px solid #af9ab2;
     box-shadow: 0.5px 0.5px #820b8a;
+    width: 80vw;
   }
   .cart-total {
     background-color: #672a4e;
@@ -28,14 +29,17 @@
     margin-top: 10px;
   }
   .cart-title {
-    width: 170px;
-    font-size: 11px;
+    width: 200px;
+    font-size: 13px;
     text-align: center;
   }
   .cart-quantity {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .price {
+    font-size: 13px;
   }
   img {
     width: 50%;
@@ -55,7 +59,7 @@
   .cart {
     align-items: center;
     .title-quantity {
-      font-size: 9px;
+      font-size: 11px;
       justify-content: center;
       align-items: center;
       gap: 10px;
@@ -67,38 +71,38 @@
       gap: 20px;
     }
     .cart-title {
-      font-size: 9px;
+      font-size: 11px;
     }
   }
 }
 
 @media screen and (max-width: 850px) {
   .your-cart {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 625px) {
   .checkout {
-    padding: 7px 15px;
+    padding: 10px 20px;
   }
   .checkout a {
-    font-size: 10px;
+    font-size: 11px;
   }
   .items-total {
-    font-size: 9px;
+    font-size: 10px;
   }
   .price-total {
-    font-size: 11px;
+    font-size: 12px;
   }
   .cart-info,
   .items-total,
   .price-total {
-    width: 70px;
+    width: 120px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .cart {
     align-items: center;
     position: relative;
@@ -121,12 +125,6 @@
     .items-total,
     .price-total {
       width: 20px;
-    }
-    .items-total {
-      font-size: 7px;
-    }
-    .price-total {
-      font-size: 9px;
     }
   }
 }

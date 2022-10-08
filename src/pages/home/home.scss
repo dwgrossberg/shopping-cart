@@ -1,7 +1,6 @@
 .home {
   margin-top: 80px;
-  font-size: 16px;
-  // position: relative;
+  font-size: 18px;
 }
 .home,
 .title,
@@ -22,12 +21,10 @@
 
 .title p {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .carousel {
-  height: 150px;
-  width: 150px;
   place-items: center;
 }
 
@@ -37,20 +34,18 @@
   border: 0.5px solid #820b8a;
   box-shadow: 1px 1px #c7ede4;
   border-radius: 7px;
-  height: 210px;
-  width: 150px;
+  height: 270px;
+  width: 200px;
 }
 
 .shop-now {
   z-index: 10;
-  margin-top: 70px;
-  margin-bottom: -70px;
   background-color: #820b8a;
   border: 3px transparent solid;
   color: white;
   padding: 7px 13px;
   border-radius: 7px;
-  font-size: 13px;
+  font-size: 15px;
   box-shadow: 1px 1px white;
   cursor: pointer;
   &:hover {
