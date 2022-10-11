@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./AddToCart.scss";
 
 const AddToCart = (props) => {
@@ -15,6 +15,13 @@ const AddToCart = (props) => {
   };
 
   const addToCart = (e) => {
+    document.getElementById("cart-count").style.backgroundColor = "#820b8a";
+    document.getElementById("cart-count").style.color = "white";
+    setTimeout(() => {
+      document.getElementById("cart-count").style.backgroundColor = "";
+      document.getElementById("cart-count").style.color = "";
+    }, 150);
+
     let prodId;
     if (e.target.parentElement.parentElement.parentElement.id) {
       prodId = Number(e.target.parentElement.parentElement.parentElement.id);
